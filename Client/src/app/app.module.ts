@@ -10,6 +10,7 @@ import { BikesModule } from './pages/bikes/bikes.module';
 import { BuildersModule } from './pages/builders/builders.module';
 import { AuthModule } from './pages/auth/auth.module';
 import { NavComponent } from './layout/nav/nav.component';
+import { HttpHandleErrorService } from './pages/shared/_services/http-handle-error.service';
 import { Title } from '@angular/platform-browser';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { Title } from '@angular/platform-browser';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    Title
+    Title,
+    HttpHandleErrorService,
   ],
   bootstrap: [AppComponent]
 })
